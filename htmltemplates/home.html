@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block body %}
+
+      <section id="about" class="py-5">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Welcome to our voting site! We provide a platform for users to participate in various polls and make their voices heard.</p>
+        </div>
+    </section>
+    <section id="vote" class="py-5 bg-light">
+        <div class="container">
+            <h2>Vote Now</h2>
+            <p>Cast your vote in the latest polls and contribute to important decisions.</p>
+            <a href="{% url 'vote' %}" class="btn btn-primary">Vote Now</a> <!-- Link to the voting page -->
+        </div>
+    </section>
+
+    <section id="past-polls" class="py-5">
+        <div class="container">
+            <h2>Poll Results</h2>
+            <p>View the results of the polls.</p>
+            <a href="{% url 'result' %}" class="btn btn-primary">View Poll Results</a>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-4">
+      <div class="container text-center">
+          <p>&copy; 2024 Voting Site. All rights reserved.</p>
+      </div>
+  </footer>
+    {% endblock %}

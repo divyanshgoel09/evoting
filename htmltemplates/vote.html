@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block body %}
+
+    <header class="bg-dark text-white py-4">
+        <!-- <div class="container"> -->
+            <h1>Voting Page</h1>
+        <!-- </div> -->
+    </header>
+
+    <table class="table mt-5">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Candidate Name</th>
+            <th scope="col">Party</th>
+            <th scope="col">Bio</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for Can in Candidate %}
+          <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{Can.name}}</td>
+            <td>{{Can.party}}</td>
+            <td>{{Can.age}}</td>
+            <td>
+               <!-- <a href="/delete_rec/{{rec.id}}/" class="btn btn-danger m-2">Delete</a> --> 
+              <a href="/update_rec/{{Can.id}}/" class="btn btn-success m-2">Vote</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 Voting Site. All rights reserved.</p>
+        </div>
+    </footer>
+{% endblock %}

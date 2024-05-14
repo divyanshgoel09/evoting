@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block body %}
+
+    <div class="container mt-5">
+        <h2 class="mb-3">Register Candidate</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Candidate Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="party">Party Affiliation:</label>
+                <input type="text" class="form-control" id="party" name="party" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" class="form-control" id="age" name="age" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 Voting Site. All rights reserved.</p>
+        </div>
+    </footer>
+    {% endblock %}

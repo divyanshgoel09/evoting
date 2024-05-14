@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block body %}
+    <header class="bg-dark text-white py-4">
+        <div class="container">
+            <h1>Voting Results</h1>
+        </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container">
+            <h2>Poll Results</h2>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Question: Which is your favorite color?</h5>
+                    <div class="row">
+                        {% for Can in Candidate %}
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-muted">{{Can.name}}</h6>
+                                    <p class="card-text">Total Votes: {{Can.votes}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 Voting Site. All rights reserved.</p>
+        </div>
+    </footer>
+{% endblock %}
